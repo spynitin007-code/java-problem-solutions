@@ -1,4 +1,4 @@
-# Java Output Formatting
+# Java Loops I
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -28,7 +28,7 @@ Print $10$ lines of output; each line $i$ (where $1 \le i \le 10$) contains the 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T14:00:42.289Z  
+**Submitted:** 2026-10-31T14:01:36.414Z  
 
 ```java
 import java.util.Scanner;
@@ -37,16 +37,12 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("================================");
+        int N = sc.nextInt();
 
-        for (int i = 0; i < 3; i++) {
-            String s = sc.next();
-            int n = sc.nextInt();
-
-            System.out.printf("%-15s%03d%n", s, n);
+        for (int i = 1; i <= 10; i++) {
+            int result = N * i;
+            System.out.println(N + " x " + i + " = " + result);
         }
-
-        System.out.println("================================");
 
         sc.close();
     }
