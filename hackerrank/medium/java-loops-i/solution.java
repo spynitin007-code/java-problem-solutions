@@ -4,16 +4,12 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("================================");
+        int N = sc.nextInt();
 
-        for (int i = 0; i < 3; i++) {
-            String s = sc.next();
-            int n = sc.nextInt();
-
-            System.out.printf("%-15s%03d%n", s, n);
+        for (int i = 1; i <= 10; i++) {
+            int result = N * i;
+            System.out.println(N + " x " + i + " = " + result);
         }
-
-        System.out.println("================================");
 
         sc.close();
     }
