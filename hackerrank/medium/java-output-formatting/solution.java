@@ -4,14 +4,16 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int i = sc.nextInt();
-        double d = sc.nextDouble();
-        sc.nextLine(); // Consume the leftover newline
-        String s = sc.nextLine();
+        System.out.println("================================");
 
-        System.out.println("String: " + s);
-        System.out.println("Double: " + d);
-        System.out.println("Int: " + i);
+        for (int i = 0; i < 3; i++) {
+            String s = sc.next();
+            int n = sc.nextInt();
+
+            System.out.printf("%-15s%03d%n", s, n);
+        }
+
+        System.out.println("================================");
 
         sc.close();
     }
