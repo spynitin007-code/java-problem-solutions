@@ -1,4 +1,4 @@
-# Java Loops II
+# Java Datatypes
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -40,33 +40,52 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T14:03:40.296Z  
+**Submitted:** 2026-10-31T14:06:08.581Z  
 
 ```java
 import java.util.Scanner;
+import java.math.BigInteger;
 
 public class Solution {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int q = in.nextInt();
+        int t = sc.nextInt();
 
-        for (int i = 0; i < q; i++) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int n = in.nextInt();
+        for (int i = 0; i < t; i++) {
+            BigInteger n = sc.nextBigInteger();
 
-            int sum = a;
+            System.out.println(n + (canFit(n) ? " can be fitted in:" : " can't be fitted anywhere."));
 
-            for (int j = 0; j < n; j++) {
-                sum += (int) Math.pow(2, j) * b;
-                System.out.print(sum + " ");
+            if (canFit(n)) {
+                if (n.compareTo(BigInteger.valueOf(Byte.MIN_VALUE)) >= 0 &&
+                    n.compareTo(BigInteger.valueOf(Byte.MAX_VALUE)) <= 0) {
+                    System.out.println("* byte");
+                }
+
+                if (n.compareTo(BigInteger.valueOf(Short.MIN_VALUE)) >= 0 &&
+                    n.compareTo(BigInteger.valueOf(Short.MAX_VALUE)) <= 0) {
+                    System.out.println("* short");
+                }
+
+                if (n.compareTo(BigInteger.valueOf(Integer.MIN_VALUE)) >= 0 &&
+                    n.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) <= 0) {
+                    System.out.println("* int");
+                }
+
+                if (n.compareTo(BigInteger.valueOf(Long.MIN_VALUE)) >= 0 &&
+                    n.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) <= 0) {
+                    System.out.println("* long");
+                }
             }
-
-            System.out.println();
         }
 
-        in.close();
+        sc.close();
+    }
+
+    static boolean canFit(BigInteger n) {
+        return n.compareTo(BigInteger.valueOf(Long.MIN_VALUE)) >= 0 &&
+               n.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) <= 0;
     }
 }
 
