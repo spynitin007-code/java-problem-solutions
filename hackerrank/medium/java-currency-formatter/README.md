@@ -1,4 +1,4 @@
-# Java Currency Formatter
+# Java Method Overriding
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -35,46 +35,16 @@ On the fourth line, print `France: f`, where $f$ is $payment$ formatted for Fren
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T16:52:57.126Z  
+**Submitted:** 2026-10-31T17:01:36.440Z  
 
 ```java
-import java.util.*;
-import java.text.*;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        double payment = scanner.nextDouble();
-
-        // US Currency
-        NumberFormat us = NumberFormat.getCurrencyInstance(Locale.US);
-
-        // Indian Currency
-        Locale indiaLocale = new Locale("en", "IN");
-        NumberFormat india = NumberFormat.getCurrencyInstance(indiaLocale);
-
-        // Chinese Currency
-        NumberFormat china = NumberFormat.getCurrencyInstance(Locale.CHINA);
-
-        // French Currency
-        NumberFormat france = NumberFormat.getCurrencyInstance(Locale.FRANCE);
-
-        // Format currency
-        String usPayment = us.format(payment);
-        String indiaPayment = india.format(payment);
-        String chinaPayment = china.format(payment);
-        String francePayment = france.format(payment);
-
-        // Print output
-        System.out.println("US: " + usPayment);
-        System.out.println("India: " + indiaPayment);
-        System.out.println("China: " + chinaPayment);
-        System.out.println("France: " + francePayment);
-
-        scanner.close();
-    }
+    @Override
+void getNumberOfTeamMembers() {
+    System.out.println("Each team has 11 players in " + getName());
 }
+
 
 ```
 
