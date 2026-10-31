@@ -2,15 +2,25 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
-        int N = sc.nextInt();
+        int q = in.nextInt();
 
-        for (int i = 1; i <= 10; i++) {
-            int result = N * i;
-            System.out.println(N + " x " + i + " = " + result);
+        for (int i = 0; i < q; i++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            int sum = a;
+
+            for (int j = 0; j < n; j++) {
+                sum += (int) Math.pow(2, j) * b;
+                System.out.print(sum + " ");
+            }
+
+            System.out.println();
         }
 
-        sc.close();
+        in.close();
     }
 }
